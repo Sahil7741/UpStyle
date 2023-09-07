@@ -148,7 +148,7 @@ const productCardGenerator1 = (x) => {
         </a>
       </div>`;
   }
-  fetch("http://localhost:3000/explore-all")
+  fetch("https://upstyle-tivn.onrender.com/explore-all")
     .then((res) => res.json())
     .then((data) => {
       element.style.display = "none";
@@ -182,7 +182,7 @@ const productCardGenerator2 = (y) => {
       </div>`;
   }
   console.log("outside2");
-  fetch("http://localhost:3000/explore-all")
+  fetch("https://upstyle-tivn.onrender.com/explore-all")
     .then((res) => res.json())
     .then((data) => {
       console.log("inside2");
@@ -315,7 +315,7 @@ searchIcon.addEventListener("click", () => {
 addToWishList = (productId) => {
   console.log("in func");
   fetch(
-    `http://localhost:3000/add-to-wishlist/${productId}`,
+    `https://upstyle-tivn.onrender.com/add-to-wishlist/${productId}`,
 
     {
       method: "PUT",
@@ -340,7 +340,7 @@ addToWishList = (productId) => {
 addToCart = (productId) => {
   console.log("in func");
   fetch(
-    `http://localhost:3000/add-to-cart-only/${productId}`,
+    `https://upstyle-tivn.onrender.com/add-to-cart-only/${productId}`,
 
     {
       method: "PUT",

@@ -9,7 +9,7 @@ let x = document.getElementById("prodetails");
 
 console.log("1");
 const productCardGenerator = (x) => {
-  fetch(`http://localhost:3000/product/${productId}`)
+  fetch(`https://upstyle-tivn.onrender.com/product/${productId}`)
     .then((res) => res.json())
     .then((data) => {
       const productCard = createProductCard(data);
@@ -157,7 +157,7 @@ function addToCart() {
   };
 
   // Send the data to the backend using a POST
-  fetch(`http://localhost:3000/add-to-cart/${productId}`, {
+  fetch(`https://upstyle-tivn.onrender.com/add-to-cart/${productId}`, {
     method: "PUT",
     credentials: "include",
     headers: {
@@ -185,7 +185,7 @@ addToWishList = (productId) => {
     myElement.style.color = "red";
   });
   fetch(
-    `http://localhost:3000/add-to-wishlist/${productId}`,
+    `https://upstyle-tivn.onrender.com/add-to-wishlist/${productId}`,
 
     {
       method: "PUT",

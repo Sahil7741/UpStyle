@@ -19,7 +19,7 @@ const productCardGenerator = (x) => {
           </a>
         </div>`;
   }
-  fetch("http://localhost:3000/explore-all")
+  fetch("https://upstyle-tivn.onrender.com/explore-all")
     .then((res) => res.json())
     .then((data) => {
       for (let i = 0; i < 35; i++) {
@@ -60,7 +60,7 @@ for (let i = 0; i < numberOfCards; i++) {
 addToWishList = (productId) => {
   console.log("in func");
   fetch(
-    `http://localhost:3000/add-to-wishlist/${productId}`,
+    `https://upstyle-tivn.onrender.com/add-to-wishlist/${productId}`,
 
     {
       method: "PUT",
@@ -85,7 +85,7 @@ addToWishList = (productId) => {
 addToCart = (productId) => {
   console.log("in func");
   fetch(
-    `http://localhost:3000/add-to-cart-only/${productId}`,
+    `https://upstyle-tivn.onrender.com/add-to-cart-only/${productId}`,
 
     {
       method: "PUT",

@@ -5,7 +5,7 @@ const productCardGenerator = (x) => {
   const element2 = document.getElementById("products-dum");
    
 
-  fetch(`http://localhost:3000/cart`, { method: "get", credentials: "include" })
+  fetch(`https://upstyle-tivn.onrender.com/cart`, { method: "get", credentials: "include" })
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -17,7 +17,7 @@ const productCardGenerator = (x) => {
       for (let i = 0; i < data.length; i++) {
         let objId = data[i].itemId;
         console.log(objId);
-        fetch(`http://localhost:3000/product/${objId}`)
+        fetch(`https://upstyle-tivn.onrender.com/product/${objId}`)
           .then((res2) => res2.json())
           .then((data2) => {
             console.log(data2);
@@ -96,8 +96,8 @@ x.addEventListener("click", function (event) {
 
 function deleteProduct(objId) {
   console.log("inside func");
-  console.log(`http://localhost:3000/remove/${objId}`);
-  fetch(`http://localhost:3000/remove/${objId}`, {
+  console.log(`https://upstyle-tivn.onrender.com/remove/${objId}`);
+  fetch(`https://upstyle-tivn.onrender.com/remove/${objId}`, {
     method: "DELETE",
     credentials: "include",
     headers: {
