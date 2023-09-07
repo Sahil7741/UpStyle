@@ -25,7 +25,7 @@ const startServer = async () => {
 };
 
 startServer();
-app.use(cors({ origin: "http://127.0.0.1:5500", credentials: true }));
+app.use(cors({ origin: "https://sahil7741.github.io", credentials: true }));
 
 app.use(cookieParser());
 app.use(express.json()), app.use(express.urlencoded({ extended: true }));
