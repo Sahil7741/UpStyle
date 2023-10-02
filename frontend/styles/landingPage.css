@@ -133,7 +133,7 @@ body {
 nav {
   display: flex;
 }
-@media (max-width: 1310px) {
+@media (max-width: 1390px) {
   .icons {
     display: inline-flex;
   }
@@ -792,9 +792,7 @@ li {
     padding-top: 40px;
     font-size: 30px;
   }
-  #featureSection .product {
-    min-width: 150px;
-  }
+  
   #featureSection .productContainer {
     padding: 10px 5px;
   }
@@ -1128,8 +1126,9 @@ li {
   }
 }
 @media (max-width: 525px) {
+ 
   .dummySection .product {
-    min-width: 170px;
+    min-width: 150px;
   }
   .dummySection .productContainer {
     padding: 10px 5px;
