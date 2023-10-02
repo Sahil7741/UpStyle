@@ -1,7 +1,7 @@
 let log = document.querySelector(".log");
 
 let profile = document.querySelector(".profile");
-fetch("http://localhost:3000/user-status", {
+fetch("https://upstyle-tivn.onrender.com/user-status", {
   method: "get",
   credentials: "include",
 })

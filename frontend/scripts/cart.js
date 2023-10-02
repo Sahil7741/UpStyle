@@ -10,12 +10,15 @@ const productCardGenerator = (x) => {
   const carting = document.querySelector(".cart .right");
   const element4 = document.getElementById("pay");
 
-// Fetching the cart from backend where users products are stored
+  // Fetching the cart from backend where users products are stored
 
-  fetch(`http://localhost:3000/cart`, { method: "get", credentials: "include" })
+  fetch(`https://upstyle-tivn.onrender.com/cart`, {
+    method: "get",
+    credentials: "include",
+  })
     .then((res) => res.json())
     .then((data) => {
-       if (data.length == 0) {
+      if (data.length == 0) {
         element.style.display = "none";
         element1.style.display = "none";
         element2.style.display = "block";
@@ -26,7 +29,7 @@ const productCardGenerator = (x) => {
         element4.style.display = "block";
         for (let i = 0; i < data.length; i++) {
           let objId = data[i].itemId;
-          fetch(`http://localhost:3000/product/${objId}`)
+          fetch(`https://upstyle-tivn.onrender.com/product/${objId}`)
             .then((res2) => res2.json())
             .then((data2) => {
               totalMrp += data2.price * data[i].quantity;
@@ -100,7 +103,7 @@ x.addEventListener("click", function (event) {
 // Function to delete products from cart when clicked on the cross using fetch with delete method
 
 function deleteProduct(objId) {
-  fetch(`http://localhost:3000/remove/${objId}`, {
+  fetch(`https://upstyle-tivn.onrender.com/remove/${objId}`, {
     method: "DELETE",
     credentials: "include",
     headers: {
@@ -125,7 +128,9 @@ const searchResultsPopup = document.getElementById("search-results-popup");
 
 async function fetchSearchResults(query) {
   try {
-    const response = await fetch(`http://localhost:3000/search?query=${query}`);
+    const response = await fetch(
+      `https://upstyle-tivn.onrender.com/search?query=${query}`
+    );
     const data = await response.json();
 
     displaySearchResults(data);

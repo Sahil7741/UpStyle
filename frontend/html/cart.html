@@ -326,7 +326,7 @@
       let log = document.querySelector(".log");
 
       let profile = document.querySelector(".profile");
-      fetch("http://localhost:3000/user-status", {
+      fetch("https://upstyle-tivn.onrender.com/user-status", {
         method: "get",
         credentials: "include",
       })
@@ -367,7 +367,7 @@
 
             var formData = new FormData(form);
 
-            fetch("http://localhost:3000/createOrder", {
+            fetch("https://upstyle-tivn.onrender.com/createOrder", {
               method: "POST",
               credentials: "include",
               headers: {
@@ -396,7 +396,7 @@
                     image: "https://dummyimage.com/600x400/000/fff",
                     order_id: res.order_id,
                     handler: function (response) {
-                      fetch("http://localhost:3000/clearCart", {
+                      fetch("https://upstyle-tivn.onrender.com/clearCart", {
                         method: "PUT",
                         credentials: "include",
                         headers: {

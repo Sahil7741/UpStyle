@@ -52,7 +52,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   };
 
   // Data  is sent to the backend using the fetch
-  fetch("http://localhost:3000/user-login", {
+  fetch("https://upstyle-tivn.onrender.com/user-login", {
     method: "POST",
     credentials: "include",
     headers: {
@@ -95,7 +95,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
   };
 
   // Sending the data to the backend using the fetch API
-  fetch("http://localhost:3000/user-signup", {
+  fetch("https://upstyle-tivn.onrender.com/user-signup", {
     method: "POST",
     credentials: "include",
     headers: {

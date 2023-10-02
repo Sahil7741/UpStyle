@@ -3,16 +3,14 @@ const productId = urlParams.get("id");
 const skeletonSection = document.querySelector("#dummy");
 px = document.getElementById("outerContainer");
 
-
 // Fetching the product reviews for the product
 
-fetch(`http://localhost:3000/product-review/${productId}`, {
+fetch(`https://upstyle-tivn.onrender.com/product-review/${productId}`, {
   method: "get",
   credentials: "include",
 })
   .then((res) => res.json())
   .then((data) => {
- 
     for (let i = 0; i < data.length; i++) {
       let userId = data[i].userId;
       let rating = data[i].rating;
@@ -20,7 +18,7 @@ fetch(`http://localhost:3000/product-review/${productId}`, {
       let createdAt = data[i].createdAt;
 
       // fetching the detail of the person who reviewed the products
-      fetch(`http://localhost:3000/viewprofile/${userId}`)
+      fetch(`https://upstyle-tivn.onrender.com/viewprofile/${userId}`)
         .then((res2) => res2.json())
         .then((data2) => {
           let firstName = data2.firstName;
@@ -40,7 +38,6 @@ fetch(`http://localhost:3000/product-review/${productId}`, {
     }
   });
 
-
 // Function to create product card for the review
 
 function createReview(
@@ -51,7 +48,6 @@ function createReview(
   reviewmsg,
   createdAt
 ) {
- 
   return `
   <div class="reviewContainer">
   <div class="top">
@@ -75,14 +71,13 @@ function createReview(
   </div>
 </div>`;
 }
- 
 
 // Function to create product card for products
 
 let x = document.getElementById("prodetails");
 
 const productCardGenerator = (x) => {
-  fetch(`http://localhost:3000/product/${productId}`)
+  fetch(`https://upstyle-tivn.onrender.com/product/${productId}`)
     .then((res) => res.json())
     .then((data) => {
       const productCard = createProductCard(data);
@@ -216,20 +211,18 @@ productCardGenerator(x);
 
 // Function to add products in the cart
 
-
 function addToCart() {
-
-   const productID = document.querySelector('input[name="productId"]').value;
+  const productID = document.querySelector('input[name="productId"]').value;
   const size = document.querySelector('select[name="size"]').value;
   const quantity = document.querySelector('input[name="quantity"]').value;
 
-   const data = {
+  const data = {
     size: size,
     quantity: quantity,
   };
 
   // Sending the data to the backend using a POST
-  fetch(`http://localhost:3000/add-to-cart/${productId}`, {
+  fetch(`https://upstyle-tivn.onrender.com/add-to-cart/${productId}`, {
     method: "PUT",
     credentials: "include",
     headers: {
@@ -248,17 +241,17 @@ function addToCart() {
     });
 }
 function buyNow() {
-   const productID = document.querySelector('input[name="productId"]').value;
+  const productID = document.querySelector('input[name="productId"]').value;
   const size = document.querySelector('select[name="size"]').value;
   const quantity = document.querySelector('input[name="quantity"]').value;
 
-   const data = {
+  const data = {
     size: size,
     quantity: quantity,
   };
 
   // Sending the data to the backend using a POST
-  fetch(`http://localhost:3000/add-to-cart/${productId}`, {
+  fetch(`https://upstyle-tivn.onrender.com/add-to-cart/${productId}`, {
     method: "PUT",
     credentials: "include",
     headers: {
@@ -278,7 +271,7 @@ function buyNow() {
     });
 }
 
-// Function to add the product in the  wishlist 
+// Function to add the product in the  wishlist
 
 addToWishList = (productId) => {
   const myElement = document.querySelector(".uil-heart-alt");
@@ -287,7 +280,7 @@ addToWishList = (productId) => {
     myElement.style.color = "red";
   });
   fetch(
-    `http://localhost:3000/add-to-wishlist/${productId}`,
+    `https://upstyle-tivn.onrender.com/add-to-wishlist/${productId}`,
 
     {
       method: "PUT",
@@ -307,7 +300,6 @@ addToWishList = (productId) => {
       console.error("Error:", error);
     });
 };
-
 
 // Function for productcards for recommendation
 
@@ -330,10 +322,10 @@ const productCardGenerator1 = (pro) => {
         </a>
       </div>`;
   }
-  fetch("http://localhost:3000/explore-all")
+  fetch("https://upstyle-tivn.onrender.com/explore-all")
     .then((res) => res.json())
     .then((data) => {
-       // Using math.random for random recommendations
+      // Using math.random for random recommendations
       let a = Math.floor(Math.random() * (30 - 1 + 1)) + 1;
       for (let i = a; i < a + 5; i++) {
         let productCard = createProductCard(data[i]);
@@ -347,12 +339,11 @@ const productCardGenerator1 = (pro) => {
 let pro = document.getElementById("productContainer1");
 productCardGenerator1(pro);
 
-
 // Function top chech if the pincode entered is as an 6 digit number only
 
 function checkPincode() {
   const enteredPincode = document.querySelector(".pincode-code").value;
-  const validPincodePattern = /^\d{6}$/;  
+  const validPincodePattern = /^\d{6}$/;
   const availabilityDiv = document.querySelector(".availability");
   availabilityDiv.textContent = "";
 
@@ -368,7 +359,6 @@ function checkPincode() {
   }
 }
 
-
 const searchInput = document.getElementById("search-input");
 const searchIcon = document.getElementById("search-icon");
 const searchResultsPopup = document.getElementById("search-results-popup");
@@ -377,7 +367,7 @@ const searchResultsPopup = document.getElementById("search-results-popup");
 
 async function fetchSearchResults(query) {
   try {
-    const response = await fetch(`http://localhost:3000/search?query=${query}`);
+    const response = await fetch(`https://upstyle-tivn.onrender.com/search?query=${query}`);
     const data = await response.json();
 
     displaySearchResults(data);
@@ -451,7 +441,6 @@ searchIcon.addEventListener("click", (event) => {
   fetchSearchResults(query);
 });
 
-
 // Function to submit review and to send it to backend
 
 function submitReview() {
@@ -465,8 +454,8 @@ function submitReview() {
   };
 
   const jsonData = JSON.stringify(reviewData);
- 
-  fetch(`http://localhost:3000/product-review/${productId}`, {
+
+  fetch(`https://upstyle-tivn.onrender.com/product-review/${productId}`, {
     credentials: "include",
     method: "PUT", // Use POST or the appropriate method for your backend
     headers: {

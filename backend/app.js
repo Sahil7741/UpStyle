@@ -35,7 +35,7 @@ const startServer = async () => {
 startServer();
 
 // Middleware for handling CORS
-app.use(cors({ origin: "http://127.0.0.1:5500", credentials: true }));
+app.use(cors({ origin: "https://sahil7741.github.io/UpStyle", credentials: true }));
 
 // Middleware for parsing cookies
 app.use(cookieParser());

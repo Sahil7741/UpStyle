@@ -9,7 +9,7 @@ const productCardGenerator = (x) => {
   const element1 = document.getElementById("products-dummy1");
   const element2 = document.getElementById("products-dum");
   const carting = document.querySelector(".cart .right");
-  fetch(`http://localhost:3000/orderPlaced`, {
+  fetch(`https://upstyle-tivn.onrender.com/orderPlaced`, {
     method: "get",
     credentials: "include",
   })
@@ -27,7 +27,7 @@ const productCardGenerator = (x) => {
 
         for (let i = 0; i < data.length; i++) {
           let objId = data[i].itemId;
-          fetch(`http://localhost:3000/product/${objId}`)
+          fetch(`https://upstyle-tivn.onrender.com/product/${objId}`)
             .then((res2) => res2.json())
             .then((data2) => {
               totalMrp += data2.price * data[i].quantity;
@@ -113,7 +113,7 @@ function updateTotalMrpDisplay(totalMrp, discountPrice, convenienceFee) {
 // Fetching user data for the summary of products and shipping address
 
 function fetchUserProfile() {
-  fetch("http://localhost:3000/viewprofile", { credentials: "include" })
+  fetch("https://upstyle-tivn.onrender.com/viewprofile", { credentials: "include" })
     .then((res) => {
       if (!res.ok) {
         throw new Error("Network response was not ok");
@@ -159,7 +159,7 @@ const searchResultsPopup = document.getElementById("search-results-popup");
 
 async function fetchSearchResults(query) {
   try {
-    const response = await fetch(`http://localhost:3000/search?query=${query}`);
+    const response = await fetch(`https://upstyle-tivn.onrender.com/search?query=${query}`);
     const data = await response.json();
 
     displaySearchResults(data);
