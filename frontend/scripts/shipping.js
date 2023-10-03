@@ -139,17 +139,17 @@ function fetchUserProfile() {
 // Fetch and display user profile data when the page loads
 window.addEventListener("load", fetchUserProfile);
 
-//   // Redirect to the new URL
-window.onbeforeunload = function () {
-  window.setTimeout(function () {
-    window.location = "landingPage.html";
-  }, 0);
-  window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser
-};
+// Redirect to the new URL
+// window.onbeforeunload = function () {
+//   window.setTimeout(function () {
+//     window.location = "landingPage.html";
+//   }, 0);
+//   window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser
+// };
 
-window.addEventListener("popstate", function (event) {
-  window.location.href = "landingPage.html";
-});
+// window.addEventListener("popstate", function (event) {
+//   window.location.href = "landingPage.html";
+// });
 
 const searchInput = document.getElementById("search-input");
 const searchIcon = document.getElementById("search-icon");

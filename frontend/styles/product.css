@@ -355,6 +355,10 @@ nav {
     padding-left: 20px;
     color: black;
   }
+  .wishlist button {
+    border-radius: 30px;
+
+  }
 }
 .log {
   display: none;

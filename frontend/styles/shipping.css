@@ -1052,6 +1052,6 @@ a {
   padding: 20px;
   display: flex;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 15px;
   flex-direction: column;
   }

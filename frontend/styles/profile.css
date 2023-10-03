@@ -783,8 +783,8 @@ p {
  
 #featureSection {
   text-align: center;
-  padding:0 20px;
-  margin:0 20px;
+  /* padding:0 20px; */
+  /* margin:0 20px; */
   padding-bottom: 40px;
   padding-left: 0;
   margin-left: 0;
