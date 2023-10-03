@@ -62,12 +62,13 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   })
     .then((response) => {
       if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json();
+        const errorMessageElement = document.getElementById("error-message");
+        errorMessageElement.textContent = "Invalid username and password !";
+      } else window.location.href = "landingPage.html";
+
+      // return response.json();
     })
     .then((data) => {
-      window.location.href = "landingPage.html";
     })
     .catch((error) => {
       // Handle errors
