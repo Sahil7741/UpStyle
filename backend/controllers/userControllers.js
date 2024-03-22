@@ -1,6 +1,7 @@
 // Required Models Imported
 const User = require("../models/userModel");
 const Product = require("../models/productModel");
+const avatar = require("../controllers/avatar.js");
 
 // Asynchronous function to get status if User is Logged In
 const status = async (req, res) => {
@@ -37,16 +38,6 @@ const status = async (req, res) => {
 // Asynchronous function to SignUp User
 const signup = async (req, res) => {
   try {
-    // Array of Avatar Url
-    let avatarUrl = [
-      "https://cdn.discordapp.com/attachments/1142746103029174274/1150537735476621373/5937171-removebg-preview.png",
-      "https://cdn.discordapp.com/attachments/1142746103029174274/1150537735715684454/5937172-removebg-preview.png",
-      "https://cdn.discordapp.com/attachments/1142746103029174274/1150537735942180864/5937173-removebg-preview.png",
-      "https://cdn.discordapp.com/attachments/1142746103029174274/1150537736130932878/5937174-removebg-preview.png",
-      "https://cdn.discordapp.com/attachments/1142746103029174274/1150537736378384426/5937175-removebg-preview.png",
-      "https://cdn.discordapp.com/attachments/1142746103029174274/1150537736634241054/5937176-removebg-preview.png",
-    ];
-
     // Random Number Generating Function
     function getRandomInt(min, max) {
       min = Math.ceil(min);
@@ -54,8 +45,8 @@ const signup = async (req, res) => {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    const randomIndex = getRandomInt(0, avatarUrl.length - 1);
-    const randomLink = avatarUrl[randomIndex];
+    const randomIndex = getRandomInt(0, avatar.avatarUrl.length - 1);
+    const randomLink = avatar.avatarUrl[randomIndex];
 
     // Creating User Object
     const user = new User(req.body);
