@@ -1,7 +1,7 @@
 // Required Models Imported
 const User = require("../models/userModel");
 const Product = require("../models/productModel");
-const avatar = require("../controllers/avatar.js");
+const avatarUrl = require("./avatar");
 
 // Asynchronous function to get status if User is Logged In
 const status = async (req, res) => {
@@ -45,8 +45,8 @@ const signup = async (req, res) => {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    const randomIndex = getRandomInt(0, avatar.avatarUrl.length - 1);
-    const randomLink = avatar.avatarUrl[randomIndex];
+    const randomIndex = getRandomInt(0, avatarUrl.length - 1);
+    const randomLink = avatarUrl[randomIndex];
 
     // Creating User Object
     const user = new User(req.body);
