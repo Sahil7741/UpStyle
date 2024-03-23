@@ -107,7 +107,7 @@ function fetchUserProfile() {
     })
     .then((data) => {
       // Display fetched user profile data
-      document.querySelector(".avatar img").src = data.avatarUrl;
+      document.querySelector(".avatar img").src = `../Images/Avatar/${data.avatarUrl}`;
       document.querySelector(".firstName").textContent = data.firstName;
       document.querySelector(".lastName").textContent = data.lastName;
       document.querySelector("#firstNameInput").value = data.firstName;
