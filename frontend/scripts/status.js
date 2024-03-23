@@ -9,7 +9,7 @@ fetch("https://upstyle-tivn.onrender.com/user-status", {
   .then((data) => {
     if (data.status) {
       profile.style.display = "block";
-      let avatarUrl = `../Images/Product/${data.avatarUrl}`;
+      let avatarUrl = `../Images/Avatar/${data.avatarUrl}`;
       let imgElement = document.querySelector(".profile img");
       imgElement.src = avatarUrl;
       log.style.display = "none";
