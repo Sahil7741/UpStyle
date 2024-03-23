@@ -26,7 +26,7 @@ const productCardGenerator = (x) => {
 
   // Fetching the all the products from the backend
 
-  fetch("https://upstyle-tivn.onrender.com/explore-all")
+  fetch("https://upstyle-theta.vercel.app/explore-all")
     .then((res) => res.json())
     .then((data) => {
       for (let i = 0; i < 35; i++) {
@@ -59,7 +59,7 @@ for (let i = 0; i < numberOfCards; i++) {
 // Function to add products in the users cart using fetch with put method and passing product id
 
 function addToCart(productId) {
-  fetch(`https://upstyle-tivn.onrender.com/add-to-cart-only/${productId}`, {
+  fetch(`https://upstyle-theta.vercel.app/add-to-cart-only/${productId}`, {
     method: "PUT",
     credentials: "include",
     headers: {
@@ -112,7 +112,7 @@ function toggleWishlist(productId) {
 // Function to add product in the wishlist by passing product id and using fetch with put method
 
 function addToWishList(productId) {
-  fetch(`https://upstyle-tivn.onrender.com/add-to-wishlist/${productId}`, {
+  fetch(`https://upstyle-theta.vercel.app/add-to-wishlist/${productId}`, {
     method: "PUT",
     credentials: "include",
     headers: {
@@ -136,7 +136,7 @@ function addToWishList(productId) {
 // Function to remove product from the wishlist by passing product id and using fetch with delete method
 
 function removeWl(productId) {
-  fetch(`https://upstyle-tivn.onrender.com/removefromwishlist/${productId}`, {
+  fetch(`https://upstyle-theta.vercel.app/removefromwishlist/${productId}`, {
     method: "DELETE",
     credentials: "include",
     headers: {
@@ -162,7 +162,7 @@ const searchResultsPopup = document.getElementById("search-results-popup");
 
 async function fetchSearchResults(query) {
   try {
-    const response = await fetch(`https://upstyle-tivn.onrender.com/search?query=${query}`);
+    const response = await fetch(`https://upstyle-theta.vercel.app/search?query=${query}`);
     const data = await response.json();
 
     displaySearchResults(data);

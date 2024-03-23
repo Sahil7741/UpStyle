@@ -21,7 +21,7 @@ const productCardGenerator1 = (pro) => {
   }
 
   // Fetching the users wishlist product to display
-  fetch("https://upstyle-tivn.onrender.com/wishlist", { credentials: "include" })
+  fetch("https://upstyle-theta.vercel.app/wishlist", { credentials: "include" })
     .then((res) => res.json())
     .then((data) => {
       if (data.length == 0) {
@@ -29,7 +29,7 @@ const productCardGenerator1 = (pro) => {
       }
       for (let i = 0; i < data.length; i++) {
         let objId = data[i].itemId;
-        fetch(`https://upstyle-tivn.onrender.com/product/${objId}`)
+        fetch(`https://upstyle-theta.vercel.app/product/${objId}`)
           .then((res2) => res2.json())
           .then((data2) => {
             let productCard = createProductCard(data2);
@@ -48,7 +48,7 @@ productCardGenerator1(pro);
 // Function to remove the wishlist function using fetch with delete
 
 function removeWl(productId) {
-  fetch(`https://upstyle-tivn.onrender.com/removefromwishlist/${productId}`, {
+  fetch(`https://upstyle-theta.vercel.app/removefromwishlist/${productId}`, {
     method: "DELETE",
     credentials: "include",
     headers: {
@@ -70,7 +70,7 @@ function removeWl(productId) {
 // Function to add the products in the cart from the wishlist
 
 function addToCart(productId) {
-  fetch(`https://upstyle-tivn.onrender.com/add-to-cart-only/${productId}`, {
+  fetch(`https://upstyle-theta.vercel.app/add-to-cart-only/${productId}`, {
     method: "PUT",
     credentials: "include",
     headers: {
@@ -98,7 +98,7 @@ function colorCart(productId) {
 // Fetching the users profile
 
 function fetchUserProfile() {
-  fetch("https://upstyle-tivn.onrender.com/viewprofile", { credentials: "include" })
+  fetch("https://upstyle-theta.vercel.app/viewprofile", { credentials: "include" })
     .then((res) => {
       if (!res.ok) {
         throw new Error("Network response was not ok");
@@ -163,7 +163,7 @@ document
     document.querySelector("#editProfile").style.display = "block";
 
     // Send the updated data to the server using a fetch request
-    fetch("https://upstyle-tivn.onrender.com/user-update", {
+    fetch("https://upstyle-theta.vercel.app/user-update", {
       method: "PUT",
       credentials: "include",
       headers: {
@@ -219,7 +219,7 @@ document.querySelector("#editProfile").addEventListener("click", function (e) {
 document.getElementById("logout").addEventListener("click", function (e) {
   e.preventDefault();
 
-  fetch("https://upstyle-tivn.onrender.com/user-logout", {
+  fetch("https://upstyle-theta.vercel.app/user-logout", {
     method: "POST",
     credentials: "include",
     headers: {
@@ -242,7 +242,7 @@ document.getElementById("logout").addEventListener("click", function (e) {
 
 document.getElementById("deleteAcc").addEventListener("click", function (e) {
   e.preventDefault();
-  fetch("https://upstyle-tivn.onrender.com/delete-account", {
+  fetch("https://upstyle-theta.vercel.app/delete-account", {
     method: "DELETE",
     credentials: "include",
     headers: {
@@ -269,7 +269,7 @@ const searchResultsPopup = document.getElementById("search-results-popup");
 
 async function fetchSearchResults(query) {
   try {
-    const response = await fetch(`https://upstyle-tivn.onrender.com/search?query=${query}`);
+    const response = await fetch(`https://upstyle-theta.vercel.app/search?query=${query}`);
     const data = await response.json();
 
     displaySearchResults(data);

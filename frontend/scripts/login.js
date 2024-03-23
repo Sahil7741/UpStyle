@@ -52,7 +52,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   };
 
   // Data  is sent to the backend using the fetch
-  fetch("https://upstyle-tivn.onrender.com/user-login", {
+  fetch("https://upstyle-theta.vercel.app/user-login", {
     method: "POST",
     credentials: "include",
     headers: {
@@ -96,7 +96,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
   };
 
   // Sending the data to the backend using the fetch API
-  fetch("https://upstyle-tivn.onrender.com/user-signup", {
+  fetch("https://upstyle-theta.vercel.app/user-signup", {
     method: "POST",
     credentials: "include",
     headers: {

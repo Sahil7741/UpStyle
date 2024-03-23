@@ -12,7 +12,7 @@ const productCardGenerator = (x) => {
 
   // Fetching the cart from backend where users products are stored
 
-  fetch(`https://upstyle-tivn.onrender.com/cart`, {
+  fetch(`https://upstyle-theta.vercel.app/cart`, {
     method: "get",
     credentials: "include",
   })
@@ -29,7 +29,7 @@ const productCardGenerator = (x) => {
         element4.style.display = "block";
         for (let i = 0; i < data.length; i++) {
           let objId = data[i].itemId;
-          fetch(`https://upstyle-tivn.onrender.com/product/${objId}`)
+          fetch(`https://upstyle-theta.vercel.app/product/${objId}`)
             .then((res2) => res2.json())
             .then((data2) => {
               totalMrp += data2.price * data[i].quantity;
@@ -103,7 +103,7 @@ x.addEventListener("click", function (event) {
 // Function to delete products from cart when clicked on the cross using fetch with delete method
 
 function deleteProduct(objId) {
-  fetch(`https://upstyle-tivn.onrender.com/remove/${objId}`, {
+  fetch(`https://upstyle-theta.vercel.app/remove/${objId}`, {
     method: "DELETE",
     credentials: "include",
     headers: {
@@ -129,7 +129,7 @@ const searchResultsPopup = document.getElementById("search-results-popup");
 async function fetchSearchResults(query) {
   try {
     const response = await fetch(
-      `https://upstyle-tivn.onrender.com/search?query=${query}`
+      `https://upstyle-theta.vercel.app/search?query=${query}`
     );
     const data = await response.json();
 

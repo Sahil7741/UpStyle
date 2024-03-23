@@ -1,7 +1,7 @@
 let log = document.querySelector(".log");
 
 let profile = document.querySelector(".profile");
-fetch("https://upstyle-tivn.onrender.com/user-status", {
+fetch("https://upstyle-theta.vercel.app/user-status", {
   method: "get",
   credentials: "include",
 })

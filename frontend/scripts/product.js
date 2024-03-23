@@ -5,7 +5,7 @@ px = document.getElementById("outerContainer");
 
 // Fetching the product reviews for the product
 
-fetch(`https://upstyle-tivn.onrender.com/product-review/${productId}`, {
+fetch(`https://upstyle-theta.vercel.app/product-review/${productId}`, {
   method: "get",
   credentials: "include",
 })
@@ -18,7 +18,7 @@ fetch(`https://upstyle-tivn.onrender.com/product-review/${productId}`, {
       let createdAt = data[i].createdAt;
 
       // fetching the detail of the person who reviewed the products
-      fetch(`https://upstyle-tivn.onrender.com/viewprofile/${userId}`)
+      fetch(`https://upstyle-theta.vercel.app/viewprofile/${userId}`)
         .then((res2) => res2.json())
         .then((data2) => {
           let firstName = data2.firstName;
@@ -77,7 +77,7 @@ function createReview(
 let x = document.getElementById("prodetails");
 
 const productCardGenerator = (x) => {
-  fetch(`https://upstyle-tivn.onrender.com/product/${productId}`)
+  fetch(`https://upstyle-theta.vercel.app/product/${productId}`)
     .then((res) => res.json())
     .then((data) => {
       const productCard = createProductCard(data);
@@ -222,7 +222,7 @@ function addToCart() {
   };
 
   // Sending the data to the backend using a POST
-  fetch(`https://upstyle-tivn.onrender.com/add-to-cart/${productId}`, {
+  fetch(`https://upstyle-theta.vercel.app/add-to-cart/${productId}`, {
     method: "PUT",
     credentials: "include",
     headers: {
@@ -251,7 +251,7 @@ function buyNow() {
   };
 
   // Sending the data to the backend using a POST
-  fetch(`https://upstyle-tivn.onrender.com/add-to-cart/${productId}`, {
+  fetch(`https://upstyle-theta.vercel.app/add-to-cart/${productId}`, {
     method: "PUT",
     credentials: "include",
     headers: {
@@ -280,7 +280,7 @@ addToWishList = (productId) => {
     myElement.style.color = "red";
   });
   fetch(
-    `https://upstyle-tivn.onrender.com/add-to-wishlist/${productId}`,
+    `https://upstyle-theta.vercel.app/add-to-wishlist/${productId}`,
 
     {
       method: "PUT",
@@ -322,7 +322,7 @@ const productCardGenerator1 = (pro) => {
         </a>
       </div>`;
   }
-  fetch("https://upstyle-tivn.onrender.com/explore-all")
+  fetch("https://upstyle-theta.vercel.app/explore-all")
     .then((res) => res.json())
     .then((data) => {
       // Using math.random for random recommendations
@@ -367,7 +367,7 @@ const searchResultsPopup = document.getElementById("search-results-popup");
 
 async function fetchSearchResults(query) {
   try {
-    const response = await fetch(`https://upstyle-tivn.onrender.com/search?query=${query}`);
+    const response = await fetch(`https://upstyle-theta.vercel.app/search?query=${query}`);
     const data = await response.json();
 
     displaySearchResults(data);
@@ -455,7 +455,7 @@ function submitReview() {
 
   const jsonData = JSON.stringify(reviewData);
 
-  fetch(`https://upstyle-tivn.onrender.com/product-review/${productId}`, {
+  fetch(`https://upstyle-theta.vercel.app/product-review/${productId}`, {
     credentials: "include",
     method: "PUT", // Use POST or the appropriate method for your backend
     headers: {

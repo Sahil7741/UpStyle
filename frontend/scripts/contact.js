@@ -6,7 +6,7 @@ const searchResultsPopup = document.getElementById("search-results-popup");
 
 async function fetchSearchResults(query) {
   try {
-    const response = await fetch(`https://upstyle-tivn.onrender.com/search?query=${query}`);
+    const response = await fetch(`https://upstyle-theta.vercel.app/search?query=${query}`);
     const data = await response.json();
 
     displaySearchResults(data);
