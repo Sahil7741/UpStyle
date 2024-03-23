@@ -52,7 +52,7 @@ function createReview(
   <div class="reviewContainer">
   <div class="top">
     <div class="avatar">
-      <img src="${avatarUrl}" alt="" />
+      <img src="../Images/Avatar/${avatarUrl}" alt="" />
     </div>
     <div class="nameStars">
       <div class="userName">${firstName} ${lastName}</div>
@@ -93,10 +93,10 @@ const productCardGenerator = (x) => {
     return ` 
     <div class="left single-pro-image">
             <div class="shoe shoe1">
-              <img src="${product.imageUrl1}"/>
+              <img src="../Images/Product/${product.imageUrl1}"/>
             </div>
             <div class="shoe shoe2">
-              <img src="${product.imageUrl2}" />
+              <img src="../Images/Product/${product.imageUrl2}" />
             </div>
           </div>
           <div class="right single-pro-details">
@@ -308,8 +308,8 @@ const productCardGenerator1 = (pro) => {
     return `
       <div class="product">
       <a href="product.html?id=${product._id}">
-        <img src="${product.imageUrl1}" alt=" product img" />
-        <img id="change" src="${product.imageUrl2}" alt=" product img" />
+        <img src="../Images/Product/${product.imageUrl1}" alt=" product img" />
+        <img id="change" src="../Images/Product/${product.imageUrl2}" alt=" product img" />
         <div class="descr">
           <span>NIKE</span>
           <h4>${product.title}</h4>

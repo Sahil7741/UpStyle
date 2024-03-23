@@ -48,7 +48,7 @@ function createProductCard(data2, data, objId) {
   return `
 <div class="products"  data-objid="${objId}">
 <div class="product-img">
-  <img src="${data2.imageUrl1}" alt="" />
+  <img src="../Images/Product/${data2.imageUrl1}" alt="" />
 </div> 
 <div class="product-details">
   <div class="pdt-details-top">
